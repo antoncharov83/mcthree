@@ -7,10 +7,12 @@ spring:
       group-id: group_id
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: ru.charov.mcthree.kafka.GsonDeserializer
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
   mvc:
     converters:
       preferred-json-mapper: gson
+  gson:
+    date-format: "yyyy-MM-dd HH:mm:ss.SSS"
